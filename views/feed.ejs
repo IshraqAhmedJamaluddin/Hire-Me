@@ -1,0 +1,62 @@
+<h1>Feed</h1>
+<%- include ('./partials/messages') %>
+    <form action="/feed" method="POST">
+        <div>
+            <input type="radio" id="job" name="collection" value="job">
+            <label for="job">Job</label><br>
+            <input type="radio" id="unit" name="collection" value="unit">
+            <label for="unit">Unit</label><br>
+            <input type="radio" id="lesson" name="collection" value="lesson">
+            <label for="lesson">Lesson</label><br>
+            <input type="radio" id="user" name="collection" value="user">
+            <label for="user">User</label><br><br>
+        </div>
+        <div>
+            <label for="name">Name (job - unit - lesson - user)</label>
+            <input type="text" name="name" placeholder="Enter Name"
+                value="<%= typeof name != 'undefined' ? name : '' %>" />
+
+        </div>
+        <div>
+            <label for="age">Age (user)</label>
+            <input type="number" name="age" placeholder="Enter Age"
+                value="<%= typeof age != 'undefined' ? age : '' %>" />
+        </div>
+        <div>
+            <label for="email">Email (user)</label>
+            <input type="email" name="email" placeholder="Enter Email"
+                value="<%= typeof email != 'undefined' ? email : '' %>" />
+        </div>
+        <div>
+            <label for="password">Password (user)</label>
+            <input type="text" name="password" placeholder="Create Password"
+                value="<%= typeof password != 'undefined' ? password : '' %>" />
+        </div>
+        <div>
+            <label for="description">Description (job - unit - lesson)</label>
+            <input type="text" name="description" placeholder="Enter Description"
+                value="<%= typeof description != 'undefined' ? description : '' %>" />
+
+        </div>
+        <div>
+            <label for="icon">Icon (job - unit)</label>
+            <input type="text" name="icon" placeholder="Enter Icon"
+                value="<%= typeof icon != 'undefined' ? icon : '' %>" />
+
+        </div>
+        <div>
+            <label for="partial">Partial (lesson)</label>
+            <input type="text" name="partial" placeholder="Enter Partial"
+                value="<%= typeof partial != 'undefined' ? partial : '' %>" />
+
+        </div>
+        <div>
+            <label for="badge">Badge (unit)</label>
+            <input type="text" name="badge" placeholder="Enter Badge"
+                value="<%= typeof badge != 'undefined' ? badge : '' %>" />
+
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">
+            Feed
+        </button>
+    </form>
