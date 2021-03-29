@@ -12,6 +12,7 @@ require('dotenv').config();
 mongoose.connect('mongodb://localhost/hire', { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => console.log('connected,,'))
     .catch((err) => console.log(err));
+app.use(express.static(__dirname + '/public'));
 //EJS
 app.set('view engine', 'ejs');
 app.use(expressEjsLayout);

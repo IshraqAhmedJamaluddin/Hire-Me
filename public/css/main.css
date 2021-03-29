@@ -1,0 +1,46 @@
+.box {
+    height: 100px;
+    width: 100px;
+    position: relative;
+    background: #72014c65;
+    border-radius: 100%;
+    overflow: hidden;
+    border: 5px solid rgba(255, 0, 157, 0.24);
+}
+.box .water {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    transform: translate(0, 100%);
+    background-image: linear-gradient(to bottom right, #e030d8, #e34ddb);
+    transition: all 0.3s;
+}
+.box .water_wave {
+    width: 200%;
+    position: absolute;
+    bottom: 100%;
+}
+.box .water_wave_back {
+    right: 0;
+    fill: #ffc7e8;
+    animation: wave-back 1.4s infinite linear;
+}
+.box .water_wave_front {
+    left: 0;
+    fill: #e34ddb;
+    margin-bottom: -1px;
+    animation: wave-front 0.7s infinite linear;
+}
+@keyframes wave-front {
+    100% {
+        transform: translate(-50%, 0);
+   }
+}
+@keyframes wave-back {
+    100% {
+        transform: translate(50%, 0);
+   }
+}
