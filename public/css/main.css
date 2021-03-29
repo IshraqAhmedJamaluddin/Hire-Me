@@ -15,7 +15,7 @@
     width: 100%;
     height: 100%;
     transform: translate(0, 100%);
-    background-image: linear-gradient(to bottom right, #e030d8, #e34ddb);
+    background-image: linear-gradient(to bottom right, #e030d8, #950952);
     transition: all 0.3s;
 }
 .box .water_wave {
@@ -30,7 +30,7 @@
 }
 .box .water_wave_front {
     left: 0;
-    fill: #e34ddb;
+    fill: #e030d794;
     margin-bottom: -1px;
     animation: wave-front 0.7s infinite linear;
 }
@@ -43,4 +43,52 @@
     100% {
         transform: translate(50%, 0);
    }
+}
+
+.row {
+    position:relative;
+    height: 150px;
+}
+.svg2, .svg3 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,0);
+    transform: rotate(150deg);
+    top: -90%;
+}
+.svg3 {
+
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1) rotate(330deg);
+
+  left:45%;
+}
+
+.grape1 {
+    position: absolute;
+    left: 60%;
+    transform: translate(-50%,0);
+}
+.blabla1 {
+    position: absolute;
+    left: 70%;
+    transform: translate(-50%,0);
+}
+
+.grape2 {
+    position: absolute;
+    left: 40%;
+    transform: translate(-50%,0);
+}
+.blabla2 {
+    position: absolute;
+    left: 30%;
+    transform: translate(-50%,0);
+    text-align: right;
+}
+
+.bodybo {
+    background: rosybrown url('../images/pink.jpg');
+    background-size: cover;
+    background-blend-mode: screen;
 }
