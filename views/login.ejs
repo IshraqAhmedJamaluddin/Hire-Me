@@ -1,16 +1,39 @@
-<h1> Login </h1>
-<%- include ('./partials/messages') %>
 
-    <form action="/users/login" method="POST">
-        <div>
-            <label for="email">Email</label>
-            <input type="email" name="email" placeholder="Enter Email" />
+<head>
+    <title>Sign in - Hire Me - DSC Modern Academy in Maadi</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/css/sign_instyle.css">
+    </head>
+<body>
+    
+
+<div id="login-box">
+        <div class="left-box">
+            <h1>Sign in</h1>
+
+            <form action="/users/login" method="POST">
+                <input type="email" name="email" placeholder="Email">
+
+                <input type="password" name="password" placeholder="Password">
+
+                <a href="#forgot" style="color: grey;font-size: 15px;">Forgot password?</a> <br> <br>
+
+                <input type="submit" name="SIGN IN" value="SIGN IN"
+                    style="background-color: #070707;color: white;font-size: 20px;width: 200px;cursor: pointer;">
+
+                <a href="/users/register" style="color: grey;font-size: 15px;">Don't have an account</a>
+
+            </form>
+
+        <%- include ('./partials/messages') %>
         </div>
-        <div>
-            <label for="password">Password</label>
-            <input type="password" name="password" placeholder="Enter Password" />
+
+        <div class="right-box">
+            <p class="signinwith"> Welcome back </p>
 
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Login</button>
 
-    </form>
+    </div>
+
+</body>

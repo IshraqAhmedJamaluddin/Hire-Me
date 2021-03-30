@@ -2,17 +2,29 @@
 <%- include ('./partials/messages') %>
     <form action="/feed" method="POST">
         <div>
+            <input type="radio" id="user" name="collection" value="user">
+            <label for="user">User</label><br>
             <input type="radio" id="job" name="collection" value="job">
             <label for="job">Job</label><br>
             <input type="radio" id="unit" name="collection" value="unit">
             <label for="unit">Unit</label><br>
             <input type="radio" id="lesson" name="collection" value="lesson">
-            <label for="lesson">Lesson</label><br>
-            <input type="radio" id="user" name="collection" value="user">
-            <label for="user">User</label><br><br>
+            <label for="lesson">Lesson</label><br><br>
         </div>
         <div>
-            <label for="name">Name (job - unit - lesson - user)</label>
+            <label for="fname">FName (user)</label>
+            <input type="text" name="fname" placeholder="Enter First Name"
+                value="<%= typeof fname != 'undefined' ? fname : '' %>" />
+
+        </div>
+        <div>
+            <label for="lname">LName (user)</label>
+            <input type="text" name="lname" placeholder="Enter Last Name"
+                value="<%= typeof lname != 'undefined' ? lname : '' %>" />
+
+        </div>
+        <div>
+            <label for="name">Name (job - unit - lesson)</label>
             <input type="text" name="name" placeholder="Enter Name"
                 value="<%= typeof name != 'undefined' ? name : '' %>" />
 

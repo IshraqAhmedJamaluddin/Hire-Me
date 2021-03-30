@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
 })
 //Register handle
 router.post('/', (req, res) => {
-    const { collection, name, email, age, password, description, icon, partial, badge } = req.body;
+    const { collection, name, fname, lname, email, age, password, description, icon, partial, badge } = req.body;
     if (collection === 'job') {
         //validation passed
         Job.findOne({ name: name }).exec((err, job) => {
@@ -104,8 +104,8 @@ router.post('/', (req, res) => {
     }
     else {
         let errors = [];
-        console.log(' Name ' + name + ' email :' + email + ' age :' + age + ' pass:' + password);
-        if (!name || !email || !age || !password) {
+        console.log(' Name ' + fname + ' email :' + email + ' age :' + age + ' pass:' + password);
+        if (!fname || !lname || !email || !age || !password) {
             errors.push({ msg: "Please fill in all fields" })
         }
         //check if underage
@@ -119,7 +119,8 @@ router.post('/', (req, res) => {
         if (errors.length > 0) {
             res.render('feed', {
                 errors: errors,
-                name: name,
+                fname: fname,
+                lname: lname,
                 email: email,
                 age: age,
                 password: password
@@ -132,14 +133,16 @@ router.post('/', (req, res) => {
                     errors.push({ msg: 'email already registered' });
                     res.render('feed', {
                         errors: errors,
-                        name: name,
+                        fname: fname,
+                        lname: lname,
                         email: email,
                         age: age,
                         password: password
                     })
                 } else {
                     const newUser = new User({
-                        name: name,
+                        fname: fname,
+                        lname: lname,
                         email: email,
                         age: age,
                         password: password

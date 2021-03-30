@@ -7,17 +7,17 @@ require("../config/passport")(passport)
 
 //login handle
 router.get('/login', (req, res) => {
-    res.render('login');
+    res.render('login', {layout: 'login'});
 })
 router.get('/register', (req, res) => {
-    res.render('register')
+    res.render('register', {layout: 'register'})
 })
 //Register handle
 router.post('/register', (req, res) => {
-    const { name, email, age, password, password2 } = req.body;
+    const { fname, lname, email, age, password, password2 } = req.body;
     let errors = [];
-    console.log(' Name ' + name + ' email :' + email + ' age :' + age + ' pass:' + password);
-    if (!name || !email || !age || !password || !password2) {
+    console.log(' Name ' + fname + ' email :' + email + ' age :' + age + ' pass:' + password);
+    if (!fname || !lname || !email || !age || !password || !password2) {
         errors.push({ msg: "Please fill in all fields" })
     }
     //check if underage
@@ -37,11 +37,13 @@ router.post('/register', (req, res) => {
     if (errors.length > 0) {
         res.render('register', {
             errors: errors,
-            name: name,
+            fname: fname,
+            lname: lname,
             email: email,
             age: age,
             password: password,
-            password2: password2
+            password2: password2,
+            layout: 'register'
         })
     } else {
         //validation passed
@@ -51,15 +53,18 @@ router.post('/register', (req, res) => {
                 errors.push({ msg: 'email already registered' });
                 res.render('register', {
                     errors: errors,
-                    name: name,
+                    fname: fname,
+                    lname: lname,
                     email: email,
                     age: age,
                     password: password,
-                    password2: password2
+                    password2: password2,
+                    layout: 'register'
                 })
             } else {
                 const newUser = new User({
-                    name: name,
+                    fname: fname,
+                    lname: lname,
                     email: email,
                     age: age,
                     password: password
