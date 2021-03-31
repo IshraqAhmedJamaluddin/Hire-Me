@@ -5,18 +5,49 @@ const passport = require('passport');
 const bcrypt = require('bcrypt');
 require("../config/passport")(passport)
 const connectEnsureLogin = require('connect-ensure-login');
+const multer = require('multer');
+const upload = multer({dest: 'public/images/profile-pics/'});
+
+const storage = multer.diskStorage({
+  destination: function(req, file, callback) {
+    callback(null, '/src/my-images');
+  },
+  filename: function (req, file, callback) {
+    callback(null, file.fieldname);
+  }
+});
+
+
+router.post('/upload', connectEnsureLogin.ensureLoggedIn(), upload.single('profile_pic'), (req, res) => {
+    if (!req.file) {
+      console.log("No file received");
+      res.redirect('/profile');
+  
+    } else {
+        console.log("File received");
+        User.updateOne({"_id":req.user.id}, { $set: {"avatar": req.file.filename} }, function(err, result) {
+            if (err) {
+                console.log(err);
+            }
+            else {
+                console.log(result);
+            }
+        });
+        res.redirect('/profile');
+    }
+  });
 
 //login handle
 router.get('/login', (req, res) => {
     if (!req.user) {
-        res.render('login', {layout: 'login'});
+        res.render('login', { layout: 'login' });
     } else {
         res.redirect('/dashboard');
     }
 })
 router.get('/register', (req, res) => {
     if (!req.user) {
-        res.render('register', {layout: 'register'})
+        res.render('register', { layout: 'register' })
     } else {
         res.redirect('/dashboard');
     }
@@ -89,12 +120,12 @@ router.post('/register', (req, res, next) => {
                             newUser.save()
                                 .then((value) => {
                                     console.log(value)
-                                    req.flash('success_msg','You have now registered!')
-                                    passport.authenticate('local',{
-                                        successRedirect : '/dashboard',
-                                        failureRedirect : '/users/login',
-                                        failureFlash : true,
-                                        })(req,res,next);
+                                    req.flash('success_msg', 'You have now registered!')
+                                    passport.authenticate('local', {
+                                        successRedirect: '/dashboard',
+                                        failureRedirect: '/users/login',
+                                        failureFlash: true,
+                                    })(req, res, next);
                                 })
                                 .catch(value => console.log(value));
 
@@ -104,11 +135,11 @@ router.post('/register', (req, res, next) => {
     }
 })
 router.post('/login', (req, res, next) => {
-    passport.authenticate('local',{
-        successRedirect : '/dashboard',
-        failureRedirect : '/users/login',
-        failureFlash : true,
-        })(req,res,next);
+    passport.authenticate('local', {
+        successRedirect: '/dashboard',
+        failureRedirect: '/users/login',
+        failureFlash: true,
+    })(req, res, next);
 })
 
 //logout

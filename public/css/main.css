@@ -155,3 +155,70 @@ iframe {
     padding: 0px;
     overflow-x: hidden; 
 }
+
+#prof {
+    border: crimson solid 5px;
+}
+
+
+
+
+img
+{
+	width:  40px;
+	height: 40px;
+}
+table
+{
+    margin: auto;
+	width: 10%;
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+}
+tr,td
+{
+	border: 0px solid #ddd;
+	
+}
+h2
+{
+   width: 100%; 
+   text-align: center; 
+   border-bottom: 1px solid #000; 
+   line-height: 0.1em;
+   margin: 10px 0 20px; 
+} 
+
+h2 span 
+{ 
+    background:#fff; 
+    padding:0 10px; 
+}
+input[type="file"]
+{
+    margin-left: 3em;
+}
+label
+{
+  color: white;
+  height: 60px;
+  width: 200px;
+  background-color: #f5af09;
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Montserrat",sans-serif;
+  cursor: pointer;
+}
+.dot {
+  height: 70px;
+  width: 70px;
+  background-color: #950952;
+  border-radius: 50%;
+  display: inline-block;
+  padding: 0 10px 0 0;
+  margin-left: 100px;
+}

@@ -20,6 +20,9 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    avatar: {
+        type: String
+    },
     lessons: {
         type: [mongoose.Schema.Types.ObjectId]
     },

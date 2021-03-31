@@ -23,7 +23,8 @@ router.get('/dashboard', connectEnsureLogin.ensureLoggedIn(), (req, res) => {
 })
 router.get('/profile', connectEnsureLogin.ensureLoggedIn(), (req, res) => {
     res.render('profile',{
-        user: req.user
+        user: req.user,
+        path: 'c3f1595900e80c6d2ccc10b0a3fdd74a'
     });
 })
 module.exports = router;
