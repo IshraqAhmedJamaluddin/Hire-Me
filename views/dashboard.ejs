@@ -1,10 +1,129 @@
-<p> Welcome <%= user.fname %></p>
-<p> Welcome <%= user.email %></p>
-<p> Welcome <%= user.age %></p>
-<p> Welcome <%= user._id %></p>
-<p> Welcome <%= user.password %></p>
-<p> Welcome <%= user.date.getMinutes() %></p>
-<p> Welcome <%= user.__v %></p>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
 
-<p><a href="/jobs/6060d964d3e14953ac3ddbfd">Complete your progress</a></p>
+        }
+
+        .top-bg {
+            background-color: #950952;
+            /* height: 200px; */
+        }
+
+        h1.top-bg {
+            color: white;
+            margin: 0;
+            padding: 81px 0 75px 50px;
+        }
+
+        .float-container {
+            margin-bottom: 40px;
+        }
+
+        .left-text {
+            background-color: #CAC4CE;
+            width: 48%;
+            height: 300px;
+            margin-top: -40px;
+            margin-left: 139px;
+            float: left;
+            border-radius: 2px;
+        }
+
+        .right-text {
+            background-color: #CAC4CE;
+            width: 30%;
+            height: 300px;
+            float: left;
+            margin-top: -40px;
+            margin-left: 15px;
+            border-radius: 2px;
+
+        }
+
+        .scnd-row.left-text {
+            width: 39%;
+        }
+        .scnd-row.right-text{
+            width: 39%;
+        }
+
+        /* h2 {
+            margin: 0;
+        } */
+
+        h2 {
+            margin-left: 15px;
+            margin-top: 15px;
+        }
+
+        p.wlcm-note {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+
+        .course {
+            background-color: #950952;
+            border-radius: 5px;
+            width: 80%;
+            /* display: flex;
+            justify-content: center; */
+            margin: auto;
+
+        }
+
+        p.course {
+            margin-left: 5px;
+            color: white;
+            padding: 150px 50px 35px 10px;
+        }
+
+        .break {
+            height: 350px;
+        }
+    </style>
+</head>
+
+<body>
+    <%- include ('./partials/header') %>
+
+    <div>
+        <div class="top-bg">
+            <h1 class="top-bg">Hire me</h1>
+
+        </div>
+        <div class="left-text">
+            <h2 class="wlcm-note">Hi <%= user.fname %>!</h2>
+            <p class="wlcm-note">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It ha</p>
+        </div>
+        <div class="right-text">
+            <h2 class="wlcm-note">Recent Activity</h2>
+            <div class="course">
+                <p class="course"><a href="/jobs/6060d964d3e14953ac3ddbfd">Complete your progress</a></p>
+            </div>
+        </div>
+    </div>
+    <div class="break"></div>
+    <div class="scnd-row">
+        <div class="left-text scnd-row">
+            <h2>Badges</h2>
+
+        </div>
+        <div class="right-text scnd-row">
+            <h2>What's Next</h2>
+
+        </div>
+    </div>
+</body>
+
+</html>
