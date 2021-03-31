@@ -6,6 +6,7 @@ const expressEjsLayout = require('express-ejs-layouts')
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
+const bodyParser = require('body-parser');
 require("./config/passport")(passport)
 require('dotenv').config();
 //mongoose
@@ -18,6 +19,7 @@ app.set('view engine', 'ejs');
 app.use(expressEjsLayout);
 //BodyParser
 app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 //express session
 app.use(session({
     secret: 'secret',

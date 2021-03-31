@@ -113,6 +113,7 @@ router.post('/login', (req, res, next) => {
 
 //logout
 router.get('/logout', connectEnsureLogin.ensureLoggedIn(), (req, res) => {
-    
+    req.logout();
+    res.redirect('/');
 })
 module.exports = router;

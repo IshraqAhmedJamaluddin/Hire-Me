@@ -1,7 +1,6 @@
 <body class="bodybo">
-  <%- include ('./partials/header') %>
+  <%- include ('./partials/header',{user:user}) %>
 <h1 class="text-center">Job <%= job %></h1>
-<br><br><br>
 <br><br><br>
 <br><br><br>
 <% for (var i = 0; i < units.length; i++) { %>
@@ -48,7 +47,6 @@
     <div class="blabla1">
       <a href="/units/<%= units[i]._id %>"><%= units[i].name %></a>
       <p><%= units[i].description %></p>
-      <p><%= units[i].icon %></p>
   </div>
 <% } %>
     <% if (i%2==1) { %>
@@ -72,7 +70,6 @@
     <div class="blabla2">
             <a href="/units/<%= units[i]._id %>"><%= units[i].name %></a>
             <p><%= units[i].description %></p>
-            <p><%= units[i].icon %></p>
     </div>
 
     <div class="grape2">

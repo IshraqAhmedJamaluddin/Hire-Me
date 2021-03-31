@@ -5,15 +5,15 @@ const Unit = require("../models/unit.js");
 const Lesson = require("../models/lesson.js");
 const connectEnsureLogin = require('connect-ensure-login');
 
-router.get('/', connectEnsureLogin.ensureLoggedIn(), (req, res) => {
+// router.get('/', connectEnsureLogin.ensureLoggedIn(), (req, res) => {
     
-    Job.find({}).exec((err, job) => {
-        console.log(job);
-        if (job) {
-            res.send(job);
-        }
-    })
-})
+//     Job.find({}).exec((err, job) => {
+//         console.log(job);
+//         if (job) {
+//             res.send(job);
+//         }
+//     })
+// })
 router.get('/:jobId', connectEnsureLogin.ensureLoggedIn(), (req, res) => {
     const id = req.params.jobId;
     Job.findOne({ _id: id }).exec((err, job) => {
@@ -21,11 +21,11 @@ router.get('/:jobId', connectEnsureLogin.ensureLoggedIn(), (req, res) => {
             Unit.find({_id:job.units}).exec((err, units) => {
                 let percentages = [];
                 const user = req.user;
-                
+                console.log(user.lessons);
                 units.forEach(unit => {
                     let counter = 0;
                     let percent = 0;
-                    Lesson.find({_id:unit.lessons}).exec((err, lessons) => {
+                    Lesson.find({_id:unit.lessons}).sort({ date: -1 }).exec((err, lessons) => {
                         if(lessons[0]){
                             lessons.forEach(lesson => {
                                 user.lessons.forEach(l => {
@@ -36,6 +36,8 @@ router.get('/:jobId', connectEnsureLogin.ensureLoggedIn(), (req, res) => {
                             });
                             percent = (counter/unit.lessons.length)*100;
                             console.log(percent);
+                            console.log(counter);
+                            console.log(unit.lessons.length);
                             percentages.push(percent);
                         } else {
                             percentages.push(0);
@@ -44,7 +46,7 @@ router.get('/:jobId', connectEnsureLogin.ensureLoggedIn(), (req, res) => {
                 });
                 setTimeout(() => {
                     console.log(percentages);
-                    res.render('courselist',{job:job.name,units:units,percentages:percentages})
+                    res.render('courselist',{job:job.name,units:units,percentages:percentages,user:req.user})
                 }, 2000);
             })
         }

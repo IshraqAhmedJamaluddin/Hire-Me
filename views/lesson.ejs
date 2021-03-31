@@ -1,8 +1,6 @@
 <%- include ('./partials/header') %>
 <h1 class="text-center">Lesson <%= lesson.name %></h1>
 <br><br><br>
-<br><br><br>
-<br><br><br>
 
 <p class="text-center"><%= lesson.description %></p>
 
@@ -24,3 +22,34 @@
 <% if (lesson.vid3) { %>
 <iframe width="560" height="315" src="<%= lesson.vid3 %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <% } %>
+
+<script>
+    if("<%= found %>"==="true"){
+        document.body.style.background = "rgb(15,88,0)";
+        document.body.style.background = "linear-gradient(328deg, rgba(54,115,42,1) 20%, rgba(182,255,117,1) 50%)";
+    } else {
+        console.log('no');
+    }
+    window.onscroll = function(ev) {
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight-100) {
+            
+            fetch('completed', {
+                method: 'POST',
+                headers: {
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({id: '<%= lesson._id %>'})
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                let id = data.id;
+                if(id == "<%= lesson.id %>"){
+                    document.body.style.background = "rgb(15,88,0)";
+                    document.body.style.background = "linear-gradient(328deg, rgba(54,115,42,1) 20%, rgba(182,255,117,1) 50%)";
+                }
+            })
+            .catch((err) => console.log(err));
+
+        }
+    };
+</script>
