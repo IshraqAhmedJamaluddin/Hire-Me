@@ -8,9 +8,23 @@ const LessonSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    partial: {
-        type: String,
-        required: true
+    txt1: {
+        type: String
+    },
+    vid1: {
+        type: String
+    },
+    txt2: {
+        type: String
+    },
+    vid2: {
+        type: String
+    },
+    txt3: {
+        type: String
+    },
+    vid3: {
+        type: String
     },
     date: {
         type: Date,

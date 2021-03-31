@@ -5,5 +5,22 @@
 <br><br><br>
 
 <p class="text-center"><%= lesson.description %></p>
-<p class="text-center"><%= lesson.partial %></p>
 
+<% if (lesson.txt1) { %>
+<p class="text-center"><%= lesson.txt1 %></p>
+<% } %>
+<% if (lesson.vid1) { %>
+<iframe width="560" height="315" src="<%= lesson.vid1 %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<% } %>
+<% if (lesson.txt2) { %>
+<p class="text-center"><%= lesson.txt2 %></p>
+<% } %>
+<% if (lesson.vid2) { %>
+<iframe width="560" height="315" src="<%= lesson.vid2 %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<% } %>
+<% if (lesson.txt3) { %>
+<p class="text-center"><%= lesson.txt3 %></p>
+<% } %>
+<% if (lesson.vid3) { %>
+<iframe width="560" height="315" src="<%= lesson.vid3 %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<% } %>

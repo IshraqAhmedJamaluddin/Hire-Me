@@ -92,3 +92,11 @@
     background-size: cover;
     background-blend-mode: screen;
 }
+
+
+iframe {
+    margin: 0 auto;
+    background-color: rgb(136, 7, 82);
+    display: block;
+    border-style:none;
+}
