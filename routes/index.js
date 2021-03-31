@@ -1,19 +1,24 @@
 const express = require('express');
 const router = express.Router();
+const connectEnsureLogin = require('connect-ensure-login');
 //login page
 router.get('/', (req, res) => {
-    res.render('welcome');
+    if (!req.user) {
+        res.render('welcome');
+    } else {
+        res.redirect('/dashboard');
+    }
 })
 //register page
 router.get('/register', (req, res) => {
-    res.render('register', {layout: 'register'});
+    res.redirect('/users/register');
 })
 router.get('/login', (req, res) => {
-    res.render('login', {layout: 'login'});
+    res.redirect('/users/login');
 })
-router.get('/dashboard', (req, res) => {
+router.get('/dashboard', connectEnsureLogin.ensureLoggedIn(), (req, res) => {
     res.render('dashboard',{
         user: req.user
-        });
+    });
 })
 module.exports = router;

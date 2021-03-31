@@ -1,5 +1,4 @@
 const express = require('express');
-const passport = require('../config/passport.js');
 const router = express.Router();
 const Job = require("../models/job.js");
 const Unit = require("../models/unit.js");
@@ -50,7 +49,7 @@ router.get('/:jobId', connectEnsureLogin.ensureLoggedIn(), (req, res) => {
             })
         }
         else {
-            res.redirect('/jobs');
+            res.redirect('/dashboard');
         }
     })
 })

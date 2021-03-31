@@ -4,16 +4,25 @@ const User = require("../models/user.js");
 const passport = require('passport');
 const bcrypt = require('bcrypt');
 require("../config/passport")(passport)
+const connectEnsureLogin = require('connect-ensure-login');
 
 //login handle
 router.get('/login', (req, res) => {
-    res.render('login', {layout: 'login'});
+    if (!req.user) {
+        res.render('login', {layout: 'login'});
+    } else {
+        res.redirect('/dashboard');
+    }
 })
 router.get('/register', (req, res) => {
-    res.render('register', {layout: 'register'})
+    if (!req.user) {
+        res.render('register', {layout: 'register'})
+    } else {
+        res.redirect('/dashboard');
+    }
 })
 //Register handle
-router.post('/register', (req, res) => {
+router.post('/register', (req, res, next) => {
     const { fname, lname, email, age, password, password2 } = req.body;
     let errors = [];
     console.log(' Name ' + fname + ' email :' + email + ' age :' + age + ' pass:' + password);
@@ -81,7 +90,11 @@ router.post('/register', (req, res) => {
                                 .then((value) => {
                                     console.log(value)
                                     req.flash('success_msg','You have now registered!')
-                                    res.redirect('/users/login');
+                                    passport.authenticate('local',{
+                                        successRedirect : '/dashboard',
+                                        failureRedirect : '/users/login',
+                                        failureFlash : true,
+                                        })(req,res,next);
                                 })
                                 .catch(value => console.log(value));
 
@@ -99,7 +112,7 @@ router.post('/login', (req, res, next) => {
 })
 
 //logout
-router.get('/logout', (req, res) => {
+router.get('/logout', connectEnsureLogin.ensureLoggedIn(), (req, res) => {
     
 })
 module.exports = router;
