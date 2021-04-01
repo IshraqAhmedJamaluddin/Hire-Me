@@ -89,7 +89,6 @@
 
 .bodybo {
     background: rosybrown url('../images/pink.jpg');
-    background-size: cover;
     background-blend-mode: screen;
 }
 
@@ -148,7 +147,7 @@ iframe {
     font-family: inherit; /* Important for vertical align on mobile phones */
     margin: 0; /* Important for vertical align on mobile phones */
   }
-  html,body
+  body
 {
     width: 100%;
     margin: 0px;

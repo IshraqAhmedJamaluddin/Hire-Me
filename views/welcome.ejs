@@ -5,18 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
         .hero-bg {
             padding-top: 100px;
             padding-bottom: 50px;
-            height: 35vh;
+            height: fit-content;
             background-image: url("/images/Group 42.png");
             position: relative
         }
@@ -41,6 +34,7 @@
         .box2 h2 {
             margin: 0;
             padding-top: 3%;
+            border-bottom: none !important;
             padding-left: 3%;
         }
 
@@ -67,8 +61,10 @@
             /* background-color: white; */
             /* opacity: 0.7; */
             font-family: Arial, Helvetica, sans-serif;
-            padding-left: 20px;
-            padding-right: 208px;
+            padding: 30px;
+            border-radius: 0.5em;
+            background-color: green;
+            width: fit-content;
         }
 
         .text-block h3 {
@@ -128,14 +124,13 @@
     </div>
     <div class="box2">
         <h2>Available Tracks</h2>
-        <div class="abs">
-            <div class="content course"></div>
+        <a class="nav-item active nav-link" href="/users/login">
             <div class="text-block">
-                <h3>Node JS</h3>
-                <p>node js expert</p>
+                <h3>Frontend</h3>
+                <p>Front end Web Developer</p>
                 <div id="circle"></div>
             </div>
-        </div>
+        </a>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
