@@ -1,0 +1,18 @@
+db.units.insertMany([
+    { name: "HOW TO BECOME A FRONT END MONSTER", description: "WHAT DO YOU NEED TO BE BECOME A FRONT END DEVELOPER ", icon: "https://static.tildacdn.com/tild3430-3430-4163-b637-363437363363/noroot.png", badge: "https://static.tildacdn.com/tild3430-3430-4163-b637-363437363363/noroot.png", lessons: ["60655d704cf40bcab8cf33dd", "60655d704cf40bcab8cf33de", "60655d704cf40bcab8cf33df", "60655d704cf40bcab8cf33e0"]},
+    { name: "HTML", description: "HTML is a markup language that web browsers use to interpret and compose text, images, and other material into visual or audible web pages.", icon: "https://static.tildacdn.com/tild3430-3430-4163-b637-363437363363/noroot.png", badge: "https://static.tildacdn.com/tild3430-3430-4163-b637-363437363363/noroot.png", lessons: ["60655d704cf40bcab8cf33e1", "60655d704cf40bcab8cf33e2", "60655d704cf40bcab8cf33e3"]},
+    { name: "CSS", description: "CSS stands for Cascading Style Sheets . CSS describes how HTML elements are to be displayed on screen, paper, or in other media .CSS saves a lot of work. It can control the layout of multiple web pages all at once .External stylesheets are stored in CSS files", icon: "https://static.tildacdn.com/tild3430-3430-4163-b637-363437363363/noroot.png", badge: "https://static.tildacdn.com/tild3430-3430-4163-b637-363437363363/noroot.png", lessons: ["60655d704cf40bcab8cf33e4", "60655d704cf40bcab8cf33e5", "60655d704cf40bcab8cf33e6"]},
+    { name: "JAVA SCRIPT", description: "JavaScript is a dynamic computer programming language. It is lightweight and most commonly used as a part of web pages, whose implementations allow client-side script to interact with the user and make dynamic pages. It is an interpreted programming language with object-oriented capabilities.", icon: "https://static.tildacdn.com/tild3430-3430-4163-b637-363437363363/noroot.png", badge: "https://static.tildacdn.com/tild3430-3430-4163-b637-363437363363/noroot.png", lessons: ["60655d704cf40bcab8cf33e7", "60655d704cf40bcab8cf33e8", "60655d704cf40bcab8cf33e9"]}
+])
+
+"60655d704cf40bcab8cf33dd", "60655d704cf40bcab8cf33de", "60655d704cf40bcab8cf33df", "60655d704cf40bcab8cf33e0"
+"60655d704cf40bcab8cf33e1", "60655d704cf40bcab8cf33e2", "60655d704cf40bcab8cf33e3"
+"60655d704cf40bcab8cf33e4", "60655d704cf40bcab8cf33e5", "60655d704cf40bcab8cf33e6"
+"60655d704cf40bcab8cf33e7", "60655d704cf40bcab8cf33e8", "60655d704cf40bcab8cf33e9"
+
+
+
+606560664cf40bcab8cf33ea
+606560664cf40bcab8cf33eb
+606560664cf40bcab8cf33ec
+606560664cf40bcab8cf33ed

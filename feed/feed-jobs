@@ -1,0 +1,8 @@
+db.jobs.insertMany([
+    {name: "Front End developer", description: "A front-end web developer is responsible for implementing visual and interactive elements that users engage with through their web browser when using a web application. They are usually supported by back-end web developers, who are responsible for server-side application logic and integration of the work front-end developers do.", icon: "https://static.tildacdn.com/tild3430-3430-4163-b637-363437363363/noroot.png", units: ["606560664cf40bcab8cf33ea", "606560664cf40bcab8cf33eb", "606560664cf40bcab8cf33ec", "606560664cf40bcab8cf33ed"]}
+])
+
+"606560664cf40bcab8cf33ea", "606560664cf40bcab8cf33eb", "606560664cf40bcab8cf33ec", "606560664cf40bcab8cf33ed"
+
+
+		ObjectId("6065613c4cf40bcab8cf33ee")

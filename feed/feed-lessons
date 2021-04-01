@@ -1,0 +1,30 @@
+db.lessons.insertMany([
+    { name: "introduction", description: "introduction about front end devlepoment and how to mastring it", vid1: "https://www.youtube.com/embed/2qZiBnbY4DQ" },
+    { name: "Languages Of The Web", description: "languages of web you must learn it", vid1: "https://www.youtube.com/embed/I-_YGphjzr" },
+    { name: "JavaScript Language Of Everything", description: "why we learn java script", vid1: "https://www.youtube.com/embed/t2diWvEusV" },
+    { name: "Learn Pre Processors and Compilers", description: "Learn Pre Processors and Compilers", vid1: "https://www.youtube.com/embed/WOOXgnUA7Q" },
+    { name: "introduction", description: "introduction about html", vid1: "https://www.youtube.com/embed/6QAELgirvjs" },
+    { name: "Elements And Browser", description: "elments in html we will use", vid1: "https://www.youtube.com/embed/7LxA9qXUY5k" },
+    { name: "First Project And First Page", description: "creating your first project with html and your first page", vid1: "https://www.youtube.com/embed/QG5aEmS9Fu0" },
+    { name: "introduction", description: "Introduction And What I Need To Learn in css", vid1: "https://www.youtube.com/embed/6QAELgirvjs" },
+    { name: "Your First Project And Syntax", description: "creating your first project with css and use the syntax", vid1: "https://www.youtube.com/embed/89VLfs-wpEY" },
+    { name: "Element Styling", description: "elments and how to style it with css", vid1: "https://www.youtube.com/embed/66sjwQ-hB64" },
+    { name: "introduction", description: "Introduction about java script", vid1: "https://www.youtube.com/embed/eKuNnpWhm7c" },
+    { name: "What I Need To Learn JavaScript", description: "What you  Need To Learn java script", vid1: "https://www.youtube.com/embed/yRAzlw4JM8o" },
+    { name: "How To Work With Chrome Console", description: "how to work with JS", vid1: "https://www.youtube.com/embed/XKYUEYPTBjo" }
+])
+
+
+60655d704cf40bcab8cf33dd
+60655d704cf40bcab8cf33de
+60655d704cf40bcab8cf33df
+60655d704cf40bcab8cf33e0
+60655d704cf40bcab8cf33e1
+60655d704cf40bcab8cf33e2
+60655d704cf40bcab8cf33e3
+60655d704cf40bcab8cf33e4
+60655d704cf40bcab8cf33e5
+60655d704cf40bcab8cf33e6
+60655d704cf40bcab8cf33e7
+60655d704cf40bcab8cf33e8
+60655d704cf40bcab8cf33e9
